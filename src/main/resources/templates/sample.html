@@ -1,0 +1,32 @@
+<!DOCTYPE hhml>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jquery validationサンプル</title>
+</head>
+<body>
+<form id="testForm">
+  <label>number</label>
+  <select name="number">
+    <option value="">選択してください</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+  </select><br>
+  <label>code</label>
+  <input type="text" name="code" class="required-group"><br>
+  <label>name</label>
+  <input type="text" name="name"><br>
+  <label>start</label>
+  <input type="text" name="start" class="required-group"><br>
+  <label>end</label>
+  <input type="text" name="end" class="required-group"><br>
+</form>
+<button id='submitBtn' type='button'>送信</button>
+<div id="errorMessage"></div>
+
+<script th:src="@{/js/lib/jquery-3.5.1.min.js}"></script>
+<script th:src="@{/js/lib/jquery.validate.min.js}"></script>
+<script th:src="@{/js/lib/additional-methods.min.js}"></script>
+<script th:src="@{/js/sample.js}"></script>
+</body>
+</html>

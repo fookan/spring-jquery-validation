@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>my validationの確認</title>
+</head>
+<body>
+  <form id="testForm">
+    <label for="start">start</label>
+    <input type="text" class="required-group" name="start" id="start"><br>
+    <label for="end">end</label>
+    <input type="text" class="required-group" name="end" id="end"><br>
+    <label for="skey">key</label>
+    <input type="text" class="required-group" name="key" id="key"><br>
+  </form>
+  <button type="button" id="submitBtn">送信</button>
+
+  <div id="errorMessage">
+  </div>
+
+  <script th:src="@{/js/lib/jquery-3.5.1.min.js}"></script>
+  <script th:src="@{/js/lib/jquery.validate.min.js}"></script>
+  <script th:src="@{/js/lib/additional-methods.min.js}"></script>
+  <script th:src="@{/js/my-validation.js}"></script>
+  <script th:src="@{/js/sample3.js}"></script>
+</body>
+
+</html>

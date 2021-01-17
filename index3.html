@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jquery.dataサンプル</title>
+</head>
+<body>
+  <form>
+    <label for="start"></label>
+    <input type="text" id="start">
+  </form>
+  <button type="button" id="submitBtn">送信</button>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script>
+  $(function() {
+    $('#submitBtn').click(function() {
+      console.log('click!');
+      let $start = $('#start');
+      console.log(`start data-test is ${$start.data('test')}`);
+      let testData = $start.data('test');
+      if (testData == null) {
+        testData = false;
+      }
+      $start.data('test', !testData);
+    });
+  });
+  </script>
+</body>
+
+</html>
