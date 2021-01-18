@@ -52,6 +52,8 @@ $(function () {
 
   }, 'at least one required');
 
+  // 数字同時のみ比較する。数字以外はtrueとなる
+  // このバリデーションをつける項目は、この項目の前にdigitsとfromを行う必要がある
   $.validator.addMethod("rangeCustomerNum", function (value, element, param) {
 
     console.log('RangeCustomerNum');
@@ -61,11 +63,18 @@ $(function () {
     //   return true;
     // }
 
+    // 値があるか
     const target = $( param );
     if (target == null || target.val() == null || target.val() === '') {
       return true;
     }
 
-    return value <= target.val();
+    // 数字があるか
+    let pattern = /^\d*$/;
+    if (!pattern.test(target.val())) {
+      return true;
+    }
+
+    return Number(value) <= Number(target.val());
   }, 'rage customer num');
 });
